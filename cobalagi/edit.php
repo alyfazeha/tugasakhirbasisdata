@@ -1,11 +1,9 @@
 <?php
 include_once("config.php");
 
-// Ambil ID menu dari URL
 if (isset($_GET['no_menu'])) {
     $no_menu = $_GET['no_menu'];
 
-    // Ambil data menu
     $result = mysqli_query($connection, "SELECT * FROM menu WHERE no_menu = $no_menu");
     if ($result && mysqli_num_rows($result) > 0) {
         $menu = mysqli_fetch_assoc($result);
@@ -18,7 +16,6 @@ if (isset($_GET['no_menu'])) {
     exit;
 }
 
-// Jika form disubmit
 if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $name = mysqli_real_escape_string($connection, $_POST['Nama']);
