@@ -67,6 +67,7 @@ $jumlah = 1;
                         <th scope="col">Name Menu</th>
                         <th scope="col">Type Menu</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -87,6 +88,10 @@ $jumlah = 1;
                             }
                             echo "</td>";
                             echo "<td><strong>Rp " . number_format($list_menu['price'], 0, ',', '.') . "</strong></td>";
+                            echo "<td>";
+                            echo "<a href='edit.php?no_menu=" . $list_menu['no_menu'] . "' class='btn btn-warning btn-sm'>Edit</a> ";
+                            echo "<a href='delete.php?no_menu=" . $list_menu['no_menu'] . "' class='btn btn-danger btn-sm'>Delete</a>";
+                            echo "</td>";
                             echo "</tr>";
                         }
                         ?>
@@ -127,6 +132,12 @@ $jumlah = 1;
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container text-center" style="padding-bottom: 40px; ">
+    <div class="d-grid ">
+        <a href="add.php" class="btn btn-primary">Add Menu</a>
+    </div>
     </div>
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
